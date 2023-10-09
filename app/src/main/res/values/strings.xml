@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Remind Drink Water</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+</resources>
