@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextToolbar" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+    
+    <style name="RounderCorner">
+        <item name="cornerSize">@dimen/corner_card</item>
+    </style>
+
+    <style name="TitleLarge" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screen.home.HomeFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleToolbar"
+            style="@style/TextToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_top_title_toolbar"
+            android:text="@string/home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imvAvatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/titleToolbar"
+            app:shapeAppearanceOverlay="@style/RounderCorner"
+            app:strokeColor="@color/color_primary"
+            app:strokeWidth="1dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title2"
+            style="@style/TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toBottomOf="@id/imvAvatar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="12dp"
+            android:text="@string/greeting_demo" />
+
+        <LinearLayout
+            android:id="@+id/cardNextTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="16dp"
+            android:background="@drawable/bg_card_gradient_1"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="@dimen/corner_card">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="@string/next_time_drink_water"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="6dp"
+                android:textSize="24sp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="20:25:11"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cardNextTime"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="@drawable/bg_card_gradient_2"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="@dimen/corner_card">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="@string/contact_to_admin"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    app:srcCompat="@drawable/icon_logo_insta"
+                    android:id="@+id/btnInstagram"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    app:srcCompat="@drawable/ic_logo_mess"
+                    android:id="@+id/btnMess"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    app:srcCompat="@drawable/ic_call"
+                    android:id="@+id/btnCall"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            android:text="@string/thanks"
+            android:textSize="12sp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

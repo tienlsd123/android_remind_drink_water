@@ -1,4 +1,4 @@
-package com.bxt.reminddrinkwater.screen.home
+package com.bxt.reminddrinkwater.screen.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

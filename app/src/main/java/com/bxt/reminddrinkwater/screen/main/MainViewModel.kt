@@ -1,4 +1,4 @@
-package com.bxt.reminddrinkwater.screen.home
+package com.bxt.reminddrinkwater.screen.main
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

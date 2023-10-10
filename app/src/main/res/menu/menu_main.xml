@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/home" android:icon="@drawable/ic_home" android:title="@string/home"/>
-    <item android:id="@+id/notification" android:icon="@drawable/ic_notification" android:title="@string/notification"/>
+    <item android:id="@+id/item_home" android:icon="@drawable/select_ic_home" android:title="@string/home"/>
+    <item android:id="@+id/item_notification" android:icon="@drawable/select_ic_notification" android:title="@string/notification"/>
 </menu>

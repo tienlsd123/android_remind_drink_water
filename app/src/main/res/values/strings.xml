@@ -2,4 +2,9 @@
     <string name="app_name">Remind Drink Water</string>
     <string name="home">Home</string>
     <string name="notification">Notification</string>
+    <string name="greeting_demo">Hi, ___ 😊\nIt\'s almost time to go for a drink</string>
+    <string name="next_time_drink_water">Next time drink water:</string>
+    <string name="contact_to_admin">Contact to Admin:</string>
+    <string name="thanks">Thanks for using my app, ____ 🔥🔥🔥</string>
+
 </resources>

@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
     id("com.google.dagger.hilt.android")
-    kotlin("kapt")
+    id("kotlin-kapt")
 }
 
 android {
@@ -35,6 +35,7 @@ android {
     }
 
     viewBinding.isEnabled = true
+    buildFeatures.dataBinding = true
 }
 
 dependencies {
@@ -51,12 +52,20 @@ dependencies {
     implementation(libs.androidx.collection.ktx)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
+
     /* splash */
     implementation(libs.androidx.core.splashscreen)
 
     /* hilt */
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+
+    /* navigation */
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
+
+    /* coil */
+    implementation(libs.coil)
 
 }
 
