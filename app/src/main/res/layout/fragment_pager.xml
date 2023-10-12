@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".screen.pager.PagerFragment">
+    tools:context=".ui.pager.PagerFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pagerContainer"

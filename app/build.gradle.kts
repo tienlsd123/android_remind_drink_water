@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace = "com.bxt.reminddrinkwater"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.bxt.reminddrinkwater"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -67,6 +67,14 @@ dependencies {
     /* coil */
     implementation(libs.coil)
 
+    /* room */
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+
+    /* work */
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.work.multiprocess)
 }
 
 kapt {

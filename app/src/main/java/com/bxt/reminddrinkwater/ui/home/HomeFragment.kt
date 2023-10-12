@@ -1,4 +1,4 @@
-package com.bxt.reminddrinkwater.screen.home
+package com.bxt.reminddrinkwater.ui.home
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -12,8 +12,9 @@ import androidx.fragment.app.Fragment
 import coil.load
 import com.bxt.reminddrinkwater.R
 import com.bxt.reminddrinkwater.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding

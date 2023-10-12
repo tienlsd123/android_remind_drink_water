@@ -6,7 +6,7 @@
     app:startDestination="@id/pagerFragment">
     <fragment
         android:id="@+id/pagerFragment"
-        android:name="com.bxt.reminddrinkwater.screen.pager.PagerFragment"
+        android:name="com.bxt.reminddrinkwater.ui.pager.PagerFragment"
         android:label="fragment_pager"
         tools:layout="@layout/fragment_pager" />
 </navigation>

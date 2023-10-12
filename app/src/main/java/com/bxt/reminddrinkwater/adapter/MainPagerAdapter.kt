@@ -4,8 +4,8 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.bxt.reminddrinkwater.R
-import com.bxt.reminddrinkwater.screen.home.HomeFragment
-import com.bxt.reminddrinkwater.screen.notification.NotificationFragment
+import com.bxt.reminddrinkwater.ui.home.HomeFragment
+import com.bxt.reminddrinkwater.ui.notification.NotificationFragment
 
 class MainPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

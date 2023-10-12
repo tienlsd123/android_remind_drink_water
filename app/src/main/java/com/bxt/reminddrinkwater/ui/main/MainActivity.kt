@@ -1,8 +1,8 @@
-package com.bxt.reminddrinkwater.screen.main
+package com.bxt.reminddrinkwater.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.bxt.reminddrinkwater.R
 import dagger.hilt.android.AndroidEntryPoint
 

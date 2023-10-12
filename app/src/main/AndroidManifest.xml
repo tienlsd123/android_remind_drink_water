@@ -19,7 +19,7 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".screen.splash.RoutingActivity"
+            android:name=".ui.splash.RoutingActivity"
             android:exported="true"
             android:theme="@style/Theme.RemindDrinkWater.Splash">
             <intent-filter>
@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".screen.main.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.RemindDrinkWater" />
     </application>

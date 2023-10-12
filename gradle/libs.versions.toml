@@ -1,23 +1,26 @@
 [versions]
-activity-ktx = "1.7.2"
+activity-ktx = "1.8.0"
 androidx-junit = "1.1.5"
-androidx-navigation-ui-ktx = "2.6.0"
-androidx-navigation-fragment-ktx = "2.6.0"
+androidx-navigation-ui-ktx = "2.7.4"
+androidx-navigation-fragment-ktx = "2.7.4"
 appcompat = "1.6.1"
 coil = "2.4.0"
-collection-ktx = "1.2.0"
+collection-ktx = "1.3.0"
 constraintlayout = "2.1.4"
-core-ktx = "1.9.0"
+core-ktx = "1.12.0"
 core-splashscreen = "1.0.1"
 emoji2-views-helper = "1.4.0"
 emoji2-views = "1.4.0"
 emoji2 = "1.4.0"
 espresso-core = "3.5.1"
 fragment-ktx = "1.6.1"
-hilt-android = "2.44"
+hilt-android = "2.48"
 junit = "4.13.2"
-material = "1.9.0"
+material = "1.10.0"
 org-jetbrains-kotlin-android = "1.9.0"
+room-ktx = "2.5.2"
+room-runtime = "2.5.2"
+work-runtime-ktx = "2.8.1"
 
 [libraries]
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activity-ktx" }
@@ -32,6 +35,11 @@ androidx-emoji2 = { module = "androidx.emoji2:emoji2", version.ref = "emoji2" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragment-ktx" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room-ktx" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room-ktx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room-runtime" }
+androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "work-runtime-ktx" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "work-runtime-ktx" }
 coil = { module = "io.coil-kt:coil", version.ref = "coil" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android" }
