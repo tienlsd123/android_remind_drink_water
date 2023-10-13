@@ -20,6 +20,6 @@ interface MessageDao {
     fun delete(message: Message)
 
     @Query("SELECT * FROM message")
-    fun getAll(): Flow<List<Message>>
+    fun getAll(): List<Message>
 }
 

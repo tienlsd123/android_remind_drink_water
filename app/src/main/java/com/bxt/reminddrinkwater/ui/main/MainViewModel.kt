@@ -6,6 +6,5 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject internal constructor(messageDao: MessageDao) : ViewModel() {
-
+class MainViewModel @Inject internal constructor(private val messageDao: MessageDao) : ViewModel() {
 }

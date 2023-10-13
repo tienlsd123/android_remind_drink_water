@@ -52,6 +52,10 @@ dependencies {
     implementation(libs.androidx.collection.ktx)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
     /* splash */
     implementation(libs.androidx.core.splashscreen)
@@ -70,11 +74,15 @@ dependencies {
     /* room */
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    //noinspection KaptUsageInsteadOfKsp
     kapt(libs.androidx.room.compiler)
 
     /* work */
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.work.multiprocess)
+
+    /* datastore */
+    implementation(libs.androidx.datastore.preferences)
 }
 
 kapt {

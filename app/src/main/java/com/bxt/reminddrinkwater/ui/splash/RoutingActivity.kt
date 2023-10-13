@@ -2,6 +2,7 @@ package com.bxt.reminddrinkwater.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.work.ExistingPeriodicWorkPolicy
@@ -20,20 +21,15 @@ class RoutingActivity : AppCompatActivity() {
 
     private val requestPermission = StoragePermissionHelper(this, onGranted = {
         startActivity(Intent(this, MainActivity::class.java))
-
+        val delay = calculatorInitialDelay()
         val request = PeriodicWorkRequestBuilder<RemindDrinkWaterWorker>(1L, TimeUnit.HOURS)
-            .setInitialDelay(calculatorInitialDelay(), TimeUnit.MILLISECONDS)
+            .setInitialDelay(delay, TimeUnit.MILLISECONDS)
             .addTag(REMIND_WORKER_TAG)
             .build()
-
         WorkManager.getInstance(this).enqueueUniquePeriodicWork(REMIND_WORKER_NAME, ExistingPeriodicWorkPolicy.KEEP, request)
-
         startActivity(Intent(this, MainActivity::class.java))
         finish()
-        finish()
-    }, onDenied = {
-        finish()
-    })
+    }, onDenied = { finish() })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
@@ -44,14 +40,15 @@ class RoutingActivity : AppCompatActivity() {
     }
 
     private fun calculatorInitialDelay(): Long {
-        val now = Calendar.getInstance().timeInMillis
+        val now = Calendar.getInstance()
+        val plusHours = if (now.get(Calendar.HOUR_OF_DAY) % 2 == 0) 2 else 1
         val target = Calendar.getInstance()
-        target.add(Calendar.HOUR_OF_DAY, 1)
+        target.add(Calendar.HOUR_OF_DAY, plusHours)
         target.apply {
             set(Calendar.MINUTE, 0)
             set(Calendar.MILLISECOND, 0)
         }
-        return target.timeInMillis - now
+        return target.timeInMillis - now.timeInMillis
     }
 
     companion object {

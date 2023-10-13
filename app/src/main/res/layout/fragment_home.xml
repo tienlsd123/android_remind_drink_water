@@ -5,7 +5,9 @@
     tools:context=".ui.home.HomeFragment">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.bxt.reminddrinkwater.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@id/imvAvatar"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="12dp"
-            android:text="@string/greeting_demo" />
+            android:text="@{@string/greeting_demo(viewModel.userName)}" />
 
         <LinearLayout
             android:id="@+id/cardNextTime"
@@ -71,13 +73,13 @@
                 android:text="@string/next_time_drink_water"/>
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCountDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:layout_marginTop="6dp"
                 android:textSize="24sp"
-                android:fontFamily="@font/roboto_medium"
-                android:text="20:25:11"/>
+                android:fontFamily="@font/roboto_medium"/>
         </LinearLayout>
 
         <LinearLayout
@@ -99,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:text="@string/contact_to_admin"/>
+                android:text="@string/contact_to_it"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
