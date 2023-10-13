@@ -19,7 +19,7 @@ interface MessageDao {
     @Delete
     fun delete(message: Message)
 
-    @Query("SELECT * FROM message")
+    @Query("SELECT * FROM message ORDER BY time DESC")
     fun getAll(): List<Message>
 }
 

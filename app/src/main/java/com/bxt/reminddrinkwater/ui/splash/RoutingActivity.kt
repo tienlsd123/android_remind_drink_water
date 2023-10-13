@@ -22,7 +22,7 @@ class RoutingActivity : AppCompatActivity() {
     private val requestPermission = StoragePermissionHelper(this, onGranted = {
         startActivity(Intent(this, MainActivity::class.java))
         val delay = calculatorInitialDelay()
-        val request = PeriodicWorkRequestBuilder<RemindDrinkWaterWorker>(1L, TimeUnit.HOURS)
+        val request = PeriodicWorkRequestBuilder<RemindDrinkWaterWorker>(2L, TimeUnit.HOURS)
             .setInitialDelay(delay, TimeUnit.MILLISECONDS)
             .addTag(REMIND_WORKER_TAG)
             .build()
@@ -42,9 +42,8 @@ class RoutingActivity : AppCompatActivity() {
     private fun calculatorInitialDelay(): Long {
         val now = Calendar.getInstance()
         val plusHours = if (now.get(Calendar.HOUR_OF_DAY) % 2 == 0) 2 else 1
-        val target = Calendar.getInstance()
-        target.add(Calendar.HOUR_OF_DAY, plusHours)
-        target.apply {
+        val target = Calendar.getInstance().apply {
+            add(Calendar.HOUR_OF_DAY, plusHours)
             set(Calendar.MINUTE, 0)
             set(Calendar.MILLISECOND, 0)
         }
