@@ -18,6 +18,8 @@ import com.bxt.reminddrinkwater.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.util.Calendar
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -40,6 +42,13 @@ class HomeFragment : Fragment() {
         setupTextCountDown()
         setupLoadAvatar()
         setupCardContact()
+        setupSinceDays()
+    }
+
+    private fun setupSinceDays() {
+        val timeInMs = Calendar.getInstance().timeInMillis - DAY_STARTED
+        val days = TimeUnit.MILLISECONDS.toDays(timeInMs)
+        binding.tvSinceDays.text = "Day $days"
     }
 
     private fun setupTextCountDown() {
@@ -80,7 +89,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupLoadAvatar() {
-        binding.imvAvatar.load(R.drawable.avatar_demo)
+        binding.imvAvatar.load(R.drawable.img_user)
     }
 
     companion object {
@@ -88,5 +97,6 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
         const val FACEBOOK_ID = 100011190370160
         const val PHONE_NUMBER = "0886265313"
+        const val DAY_STARTED = 1695574800000
     }
 }

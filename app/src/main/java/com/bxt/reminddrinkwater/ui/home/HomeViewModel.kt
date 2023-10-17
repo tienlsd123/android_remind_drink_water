@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(countDownTimeUseCase: CountDownTimeUseCase) : ViewModel() {
 
-    private val _userName: MutableLiveData<String> = MutableLiveData<String>("Tien")
+    private val _userName: MutableLiveData<String> = MutableLiveData<String>("Trang")
     val userName: LiveData<String> = _userName
 
     val countDownTimeFlow: Flow<String> = countDownTimeUseCase()
