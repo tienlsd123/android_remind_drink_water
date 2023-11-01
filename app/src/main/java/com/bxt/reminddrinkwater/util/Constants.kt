@@ -1,6 +1,13 @@
 package com.bxt.reminddrinkwater.util
 
+import androidx.datastore.preferences.core.stringPreferencesKey
+
 const val DATABASE_NAME = "remind-drink-water-db"
+const val PREFERENCES_DATASTORE = "preferences_datastore"
+
+object PreferencesKeys {
+    val PATH_AVATAR = stringPreferencesKey("path_avatar")
+}
 
 val listMessage = arrayListOf(
     "Don't forget to drink water regularly; it's essential for your health!",
