@@ -2,7 +2,6 @@ package com.bxt.reminddrinkwater.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.work.ExistingPeriodicWorkPolicy
@@ -11,9 +10,10 @@ import androidx.work.WorkManager
 import com.bxt.reminddrinkwater.R
 import com.bxt.reminddrinkwater.ui.main.MainActivity
 import com.bxt.reminddrinkwater.util.StoragePermissionHelper
+import com.bxt.reminddrinkwater.util.getCalendarNextTime
 import com.bxt.reminddrinkwater.worker.RemindDrinkWaterWorker
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.Calendar
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
@@ -42,11 +42,7 @@ class RoutingActivity : AppCompatActivity() {
     private fun calculatorInitialDelay(): Long {
         val now = Calendar.getInstance()
         val plusHours = if (now.get(Calendar.HOUR_OF_DAY) % 2 == 0) 2 else 1
-        val target = Calendar.getInstance().apply {
-            add(Calendar.HOUR_OF_DAY, plusHours)
-            set(Calendar.MINUTE, 0)
-            set(Calendar.MILLISECOND, 0)
-        }
+        val target = getCalendarNextTime(plusHours)
         return target.timeInMillis - now.timeInMillis
     }
 

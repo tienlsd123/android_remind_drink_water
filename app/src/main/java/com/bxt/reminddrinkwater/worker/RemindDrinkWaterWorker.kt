@@ -4,7 +4,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
@@ -15,11 +14,14 @@ import com.bxt.reminddrinkwater.data.MessageRepository
 import com.bxt.reminddrinkwater.util.listMessage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.util.*
 import kotlin.random.Random
 
 class RemindDrinkWaterWorker(context: Context, workerParameters: WorkerParameters) : CoroutineWorker(context, workerParameters) {
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
-        val msg = listMessage[Random.nextInt(0,9)]
+        if (isEvening()) return@withContext Result.success()
+
+        val msg = listMessage[Random.nextInt(0, 9)]
         postNotification(msg)
         saveHistoryMessage(msg)
         Result.success()
@@ -44,6 +46,11 @@ class RemindDrinkWaterWorker(context: Context, workerParameters: WorkerParameter
             .build()
 
         notificationManager.notify(1, notificationBuild)
+    }
+
+    private fun isEvening(): Boolean {
+        val house = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
+        return (1..6).contains(house) || (22..24).contains(house)
     }
 
     companion object {
